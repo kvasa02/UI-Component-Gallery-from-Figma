@@ -1,36 +1,59 @@
 # UI Component Gallery from Figma
 
-A showcase of accessible, responsive UI components inspired by Figma designs.
-
-**Components included:**
-- Navbar
-- Card
-- Modal
-- Accordion
-- Button Group
-
-**Features:**
-- Built with Bootstrap 5 and custom fonts
-- Fully responsive demo grid
-- Accessible: ARIA, keyboard navigation, semantic HTML
-- Each component includes a live demo and code sample
-
-
-## How I Work from Figma as a Developer
-
-When working from a Figma file, I:
-- Inspect the component’s layout, spacing, typography, and states using Figma’s Inspect panel.
-- Export or note color codes, font families, and sizes.
-- Reference interaction notes and variants for focus, hover, and active states.
-- Translate Figma’s visual structure into semantic HTML and Bootstrap classes.
-- Ensure all interactive elements are accessible via keyboard and screen readers.
-- Use ARIA attributes and test color contrast.
-- Iterate on the code until the output matches the Figma spec, then test on multiple devices.
+A showcase of accessible, responsive UI components inspired by Figma designs.  
+**See it live:** [GitHub Pages link here]
 
 ---
 
-**Demo:**  
-Deployed at [GitHub Pages link here]
+## Components included
 
-**Author:**  
-kvasa02
+- **Navbar**: Responsive, accessible navigation bar with ARIA and keyboard support.
+- **Card**: Clean card layout with semantic markup and alt text.
+- **Modal**: Focus is trapped, closes by keyboard, ARIA-labeled.
+- **Accordion**: Semantic headings, ARIA, keyboard navigation.
+- **Button Group**: ARIA group role, keyboard accessible.
+- **Switch/Toggle**: Custom ARIA switch, fully labeled and keyboard accessible.
+- **Tabs**: ARIA tablist, keyboard support.
+- **Toast**: ARIA status region, dismissible, auto-hides.
+
+---
+
+## Features
+
+- Built with **Bootstrap 5**, custom fonts, and modern responsive CSS.
+- **Accessibility**: Semantic HTML, ARIA, keyboard support, high contrast mode, skip link, alt text, color contrast, font size switcher.
+- **Responsive**: Mobile and desktop layouts.
+
+---
+
+## How I Work from Figma as a Developer
+
+- I inspect design elements in Figma for size, color, font, and states using the Inspect panel.
+- I export or reference Figma’s color codes, font families, and spacing.
+- I map the visual structure to semantic HTML and Bootstrap classes, using custom CSS as needed.
+- I ensure each component is accessible: ARIA roles, keyboard navigation, contrast, and logical order.
+- I test with keyboards, screen readers, and adjust as needed for best UX.
+- I document my process with code comments and README notes.
+
+---
+
+## Accessibility Highlights
+
+- All interactive elements are keyboard accessible and labeled for screen readers.
+- Color contrast meets WCAG AA standards in both default and high contrast themes.
+- Includes skip-to-content link, font size switcher, and theme toggle.
+- Components are tested for focus, ARIA, and logical navigation.
+
+---
+
+## Figma Reference
+
+- [Figma UI Kit Example](https://www.figma.com/community/file/1289204876603411384/UI-Kit-Example)
+- (Add your own Figma file or screenshots if you customize further!)
+
+---
+
+## Author
+
+kvasa02  
+[GitHub](https://github.com/kvasa02/ui-component-gallery)
