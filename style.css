@@ -1,0 +1,51 @@
+body {
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  background: #f8f9fb;
+}
+
+h1, .h4, h2 {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.component-section {
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 8px 0 rgba(60,60,60,0.06);
+  background: #fff;
+}
+
+.card {
+  border-radius: 1em !important;
+}
+
+details summary {
+  cursor: pointer;
+  color: #2563eb;
+  outline: none;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+details[open] summary {
+  margin-bottom: 0.5em;
+}
+
+pre {
+  background: #f3f4f6;
+  border-radius: 0.5em;
+  padding: 1em;
+  font-size: 0.96em;
+  overflow-x: auto;
+  margin-bottom: 0;
+}
+
+code {
+  font-family: "Fira Mono", "Consolas", "Monaco", "Menlo", monospace;
+}
+
+@media (max-width: 800px) {
+  .card {
+    margin-bottom: 2em;
+  }
+}
