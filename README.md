@@ -14,7 +14,7 @@ A showcase of accessible, responsive UI components inspired by Figma designs.
 - Fully responsive demo grid
 - Accessible: ARIA, keyboard navigation, semantic HTML
 - Each component includes a live demo and code sample
-- [Figma file link (example)](https://www.figma.com/community/file/1289204876603411384/UI-Kit-Example)
+
 
 ## How I Work from Figma as a Developer
 
