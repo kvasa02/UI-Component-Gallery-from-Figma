@@ -1,51 +1,112 @@
 body {
   font-family: 'Inter', 'Roboto', Arial, sans-serif;
   background: #f8f9fb;
+  font-size: 16px;
+  transition: background 0.2s, color 0.2s;
 }
-
 h1, .h4, h2 {
   font-family: 'Inter', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: -1px;
 }
-
 .component-section {
   border: 1px solid #e5e7eb;
   box-shadow: 0 1px 8px 0 rgba(60,60,60,0.06);
   background: #fff;
 }
-
 .card {
   border-radius: 1em !important;
 }
-
-details summary {
-  cursor: pointer;
+.figma-img {
+  max-width: 90%;
+  height: auto;
+  border: 2px solid #e5e7eb;
+}
+.visually-hidden-focusable.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  z-index: 10000;
+}
+.visually-hidden-focusable.skip-link:focus {
+  left: 10px;
+  top: 10px;
+  width: auto;
+  height: auto;
+  padding: 0.5em 1em;
+  background: #fff;
   color: #2563eb;
-  outline: none;
-  font-weight: 500;
-  font-size: 1em;
-}
-
-details[open] summary {
-  margin-bottom: 0.5em;
-}
-
-pre {
-  background: #f3f4f6;
+  border: 2px solid #2563eb;
   border-radius: 0.5em;
-  padding: 1em;
-  font-size: 0.96em;
-  overflow-x: auto;
-  margin-bottom: 0;
+  text-decoration: none;
 }
-
-code {
-  font-family: "Fira Mono", "Consolas", "Monaco", "Menlo", monospace;
+.form-switch input[type="checkbox"] {
+  display: none;
 }
-
+.form-switch .switch-slider {
+  width: 40px;
+  height: 22px;
+  background: #ddd;
+  border-radius: 12px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  transition: background 0.2s;
+}
+.form-switch input[type="checkbox"]:checked + .switch-slider {
+  background: #2563eb;
+}
+.form-switch .switch-slider:after {
+  content: '';
+  position: absolute;
+  left: 3px; top: 3px;
+  width: 16px; height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  transition: left 0.2s;
+}
+.form-switch input[type="checkbox"]:checked + .switch-slider:after {
+  left: 21px;
+}
+.form-switch .switch-slider {
+  margin-right: 0.5em;
+}
+.badge.bg-success {
+  font-size: 0.95em;
+  font-weight: 500;
+}
 @media (max-width: 800px) {
   .card {
     margin-bottom: 2em;
   }
+}
+.high-contrast, .high-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+}
+.high-contrast .component-section,
+.high-contrast .card,
+.high-contrast .navbar,
+.high-contrast .modal-content,
+.high-contrast .accordion-button,
+.high-contrast .btn {
+  background: #1a1a1a !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+.high-contrast .btn-primary, .high-contrast .btn-outline-primary {
+  background: #ffc107 !important;
+  color: #111 !important;
+  border-color: #ffc107 !important;
+}
+.high-contrast .btn-secondary, .high-contrast .btn-outline-secondary {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+.high-contrast .badge.bg-success {
+  background: #ffc107 !important;
+  color: #111 !important;
 }
