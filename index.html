@@ -9,18 +9,50 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container py-4">
+  <a href="#main-content" class="visually-hidden-focusable skip-link">Skip to main content</a>
+  <main id="main-content" class="container py-4">
     <header class="mb-5">
       <h1 class="text-center mb-2">UI Component Gallery from Figma</h1>
       <p class="text-center text-muted mb-3">
         Accessible, responsive components inspired by <a href="https://www.figma.com/community/file/1289204876603411384/UI-Kit-Example" target="_blank" rel="noopener">Figma designs</a>.
       </p>
+      <div class="d-flex justify-content-center gap-3 mb-3">
+        <button id="theme-toggle" class="btn btn-outline-secondary btn-sm" aria-pressed="false">High Contrast: Off</button>
+        <label class="form-label mb-0" for="font-size-select">Font size:</label>
+        <select id="font-size-select" class="form-select form-select-sm w-auto" aria-label="Font size selector">
+          <option value="16">Default</option>
+          <option value="18">Large</option>
+          <option value="20">Extra Large</option>
+        </select>
+      </div>
     </header>
+    <!-- Figma Section -->
+    <section class="mb-5">
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center mb-3 mb-md-0">
+          <img src="https://i.imgur.com/9G5dC8L.png" alt="Figma UI Kit Sample" class="figma-img rounded shadow-sm" />
+        </div>
+        <div class="col-md-8">
+          <h2 class="h4 mb-2">About This Project</h2>
+          <p>This gallery showcases UI components recreated from a <a href="https://www.figma.com/community/file/1289204876603411384/UI-Kit-Example" target="_blank" rel="noopener">Figma UI kit</a>. Each component is built with Bootstrap, custom CSS, and accessibility best practices.</p>
+          <ul>
+            <li>Direct mapping from Figma’s Inspect panel to code</li>
+            <li>Semantic HTML, ARIA roles, keyboard navigation, color contrast</li>
+            <li>Responsive and themeable for various user needs</li>
+          </ul>
+          <p class="small text-muted">See <strong>README</strong> for detailed workflow and accessibility notes.</p>
+        </div>
+      </div>
+    </section>
     <div class="row g-5">
       <!-- Navbar Demo -->
       <div class="col-12">
         <section class="component-section card p-4">
-          <h2 class="h4 mb-3">Navbar</h2>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2 class="h4 mb-0">Navbar</h2>
+            <span class="badge bg-success" title="Keyboard, ARIA, Responsive">Accessible</span>
+          </div>
+          <p class="mb-3 small">Semantic <code>&lt;nav&gt;</code>; ARIA labels; keyboard nav; responsive collapse.</p>
           <nav class="navbar navbar-expand-lg bg-light rounded mb-3" aria-label="Demo navigation">
             <div class="container-fluid">
               <a class="navbar-brand fw-bold" href="#">Brand</a>
@@ -52,9 +84,7 @@
           <details>
             <summary class="mb-2">Show Code</summary>
             <pre><code class="language-html" tabindex="0">
-&lt;nav class="navbar navbar-expand-lg bg-light"&gt;
-  ...
-&lt;/nav&gt;
+&lt;nav class="navbar navbar-expand-lg ..."&gt;...&lt;/nav&gt;
             </code></pre>
           </details>
         </section>
@@ -63,7 +93,11 @@
       <!-- Card Demo -->
       <div class="col-md-6">
         <section class="component-section card p-4 h-100">
-          <h2 class="h4 mb-3">Card</h2>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2 class="h4 mb-0">Card</h2>
+            <span class="badge bg-success" title="Semantic, Alt text">Accessible</span>
+          </div>
+          <p class="mb-3 small">Semantic markup; alt text for image; logical heading levels.</p>
           <div class="card shadow-sm" style="max-width: 320px;">
             <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Nature scene" />
             <div class="card-body">
@@ -76,11 +110,11 @@
             <summary class="mb-2 mt-3">Show Code</summary>
             <pre><code class="language-html" tabindex="0">
 &lt;div class="card"&gt;
-  &lt;img src="..." class="card-img-top" alt="..." /&gt;
+  &lt;img src="..." alt="Nature scene" /&gt;
   &lt;div class="card-body"&gt;
-    &lt;h5 class="card-title"&gt;Card Title&lt;/h5&gt;
-    &lt;p class="card-text"&gt;...&lt;/p&gt;
-    &lt;a href="#" class="btn btn-primary"&gt;Action&lt;/a&gt;
+    &lt;h5&gt;Card Title&lt;/h5&gt;
+    &lt;p&gt;...&lt;/p&gt;
+    &lt;a class="btn btn-primary"&gt;Action&lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;
             </code></pre>
@@ -91,7 +125,11 @@
       <!-- Modal Demo -->
       <div class="col-md-6">
         <section class="component-section card p-4 h-100">
-          <h2 class="h4 mb-3">Modal</h2>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2 class="h4 mb-0">Modal</h2>
+            <span class="badge bg-success" title="Focus trap, ARIA, Keyboard">Accessible</span>
+          </div>
+          <p class="mb-3 small">Focus is trapped; ARIA labels; closes with Escape and by keyboard.</p>
           <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#demoModal">
             Show Modal
           </button>
@@ -115,8 +153,8 @@
           <details>
             <summary class="mb-2 mt-3">Show Code</summary>
             <pre><code class="language-html" tabindex="0">
-&lt;button ... data-bs-toggle="modal" data-bs-target="#demoModal"&gt;Show Modal&lt;/button&gt;
-&lt;div class="modal fade" id="demoModal" ...&gt;...&lt;/div&gt;
+&lt;button ... data-bs-toggle="modal" ...&gt;Show Modal&lt;/button&gt;
+&lt;div class="modal fade" ...&gt;...&lt;/div&gt;
             </code></pre>
           </details>
         </section>
@@ -125,7 +163,11 @@
       <!-- Accordion Demo -->
       <div class="col-md-6">
         <section class="component-section card p-4 h-100">
-          <h2 class="h4 mb-3">Accordion</h2>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2 class="h4 mb-0">Accordion</h2>
+            <span class="badge bg-success" title="ARIA, Keyboard, Semantic">Accessible</span>
+          </div>
+          <p class="mb-3 small">ARIA for expanded/collapsed; keyboard navigation; semantic headings.</p>
           <div class="accordion" id="demoAccordion">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
@@ -171,7 +213,11 @@
       <!-- Button Group Demo -->
       <div class="col-md-6">
         <section class="component-section card p-4 h-100">
-          <h2 class="h4 mb-3">Button Group</h2>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2 class="h4 mb-0">Button Group</h2>
+            <span class="badge bg-success" title="ARIA group, Keyboard">Accessible</span>
+          </div>
+          <p class="mb-3 small">Grouped as a single tab stop; labelled with <code>aria-label</code>.</p>
           <div class="btn-group" role="group" aria-label="Button group example">
             <button type="button" class="btn btn-outline-primary">Left</button>
             <button type="button" class="btn btn-outline-primary">Middle</button>
@@ -189,6 +235,108 @@
           </details>
         </section>
       </div>
+
+      <!-- Switch/Toggle Demo -->
+      <div class="col-md-6">
+        <section class="component-section card p-4 h-100">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2 class="h4 mb-0">Switch/Toggle</h2>
+            <span class="badge bg-success" title="ARIA, Keyboard, Label">Accessible</span>
+          </div>
+          <p class="mb-3 small">Custom switch with <code>role="switch"</code>; fully keyboard accessible; labelled.</p>
+          <label class="form-switch d-flex align-items-center gap-2" for="demoSwitch">
+            <input type="checkbox" id="demoSwitch" role="switch" aria-checked="false" aria-label="Enable notifications" />
+            <span class="switch-slider" aria-hidden="true"></span>
+            <span>Enable notifications</span>
+          </label>
+          <details>
+            <summary class="mb-2 mt-3">Show Code</summary>
+            <pre><code class="language-html" tabindex="0">
+&lt;label ... for="demoSwitch"&gt;
+  &lt;input type="checkbox" id="demoSwitch" role="switch" ... /&gt;
+  &lt;span class="switch-slider" aria-hidden="true"&gt;&lt;/span&gt;
+  &lt;span&gt;Enable notifications&lt;/span&gt;
+&lt;/label&gt;
+            </code></pre>
+          </details>
+        </section>
+      </div>
+
+      <!-- Tabs Demo -->
+      <div class="col-md-6">
+        <section class="component-section card p-4 h-100">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2 class="h4 mb-0">Tabs</h2>
+            <span class="badge bg-success" title="ARIA, Keyboard, Focus">Accessible</span>
+          </div>
+          <p class="mb-3 small">Tabs with <code>role="tablist"</code>, ARIA, and keyboard navigation.</p>
+          <ul class="nav nav-tabs" id="demoTabList" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="tab-home" data-bs-toggle="tab" data-bs-target="#tab1" type="button"
+                role="tab" aria-controls="tab1" aria-selected="true">Home</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tab-profile" data-bs-toggle="tab" data-bs-target="#tab2" type="button"
+                role="tab" aria-controls="tab2" aria-selected="false">Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tab-contact" data-bs-toggle="tab" data-bs-target="#tab3" type="button"
+                role="tab" aria-controls="tab3" aria-selected="false">Contact</button>
+            </li>
+          </ul>
+          <div class="tab-content p-2 border-bottom border-start border-end rounded-bottom" id="demoTabContent">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab-home" tabindex="0">
+              Home tab content.
+            </div>
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab-profile" tabindex="0">
+              Profile tab content.
+            </div>
+            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab-contact" tabindex="0">
+              Contact tab content.
+            </div>
+          </div>
+          <details>
+            <summary class="mb-2 mt-3">Show Code</summary>
+            <pre><code class="language-html" tabindex="0">
+&lt;ul class="nav nav-tabs" role="tablist"&gt;...&lt;/ul&gt;
+&lt;div class="tab-content"&gt;...&lt;/div&gt;
+            </code></pre>
+          </details>
+        </section>
+      </div>
+
+      <!-- Toast Demo -->
+      <div class="col-md-6">
+        <section class="component-section card p-4 h-100">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2 class="h4 mb-0">Toast</h2>
+            <span class="badge bg-success" title="Announces, ARIA, Dismiss">Accessible</span>
+          </div>
+          <p class="mb-3 small">Announces itself as a <code>status</code> region; dismissible; auto-hides.</p>
+          <button class="btn btn-warning mb-2" id="showToastBtn">Show Toast</button>
+          <div class="toast-container position-static">
+            <div id="demoToast" class="toast" role="status" aria-live="polite" aria-atomic="true" data-bs-delay="4000">
+              <div class="toast-header">
+                <strong class="me-auto">Notice</strong>
+                <small>now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                This is an accessible toast message!
+              </div>
+            </div>
+          </div>
+          <details>
+            <summary class="mb-2 mt-3">Show Code</summary>
+            <pre><code class="language-html" tabindex="0">
+&lt;div class="toast" role="status" aria-live="polite" ...&gt;
+  &lt;div class="toast-header"&gt;...&lt;/div&gt;
+  &lt;div class="toast-body"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+          </details>
+        </section>
+      </div>
     </div>
     <footer class="text-center mt-5 pt-4 border-top">
       <p class="mb-1">Inspired by <a href="https://www.figma.com/community/file/1289204876603411384/UI-Kit-Example" target="_blank" rel="noopener">this Figma UI Kit</a></p>
@@ -196,5 +344,6 @@
     </footer>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
